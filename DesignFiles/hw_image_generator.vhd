@@ -48,19 +48,12 @@ BEGIN
   PROCESS(disp_ena, row, column)
   BEGIN
     IF(disp_ena = '1') THEN        --display time
-		old_red<=red;
-		old_green<=green;
-		old_blue<=blue;
-		
-		red <= old_red+1;
-		
-      IF (old_red = "11111111") THEN
-        green <= old_green+1;
-      END IF;
-		
-		IF (old_green = "11111111") THEN
-        blue <= old_blue+1;
-      END IF;
+
+	 red<=conv_std_logic_vector(row, 8);
+	 blue<=conv_std_logic_vector(column, 8);
+	 green<=conv_std_logic_vector(row+column, 8);
+	 
+	 
 
     END IF;
   

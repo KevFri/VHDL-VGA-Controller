@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for VGA_Controller
-Thu Jun 15 18:34:20 2017
+Thu Jun 15 18:48:40 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -105,9 +105,9 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.2%      ;
-;     Processor 3            ;   2.2%      ;
-;     Processor 4            ;   2.2%      ;
+;     Processor 2            ;   2.4%      ;
+;     Processor 3            ;   2.4%      ;
+;     Processor 4            ;   2.4%      ;
 +----------------------------+-------------+
 
 
@@ -121,14 +121,13 @@ agreement for further details.
 +----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
 
 
-+------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                           ;
-+------------+-----------------+----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                             ; Note ;
-+------------+-----------------+----------------------------------------+------+
-; 219.97 MHz ; 219.97 MHz      ; vga_controller:VGA_Controller|disp_ena ;      ;
-; 262.4 MHz  ; 262.4 MHz       ; pixel_clk                              ;      ;
-+------------+-----------------+----------------------------------------+------+
++--------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 254.78 MHz ; 254.78 MHz      ; pixel_clk  ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -143,8 +142,8 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; vga_controller:VGA_Controller|disp_ena ; -3.546 ; -95.885       ;
-; pixel_clk                              ; -2.811 ; -59.859       ;
+; vga_controller:VGA_Controller|disp_ena ; -5.914 ; -116.860      ;
+; pixel_clk                              ; -2.925 ; -111.072      ;
 +----------------------------------------+--------+---------------+
 
 
@@ -153,8 +152,8 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------+-------+---------------+
 ; Clock                                  ; Slack ; End Point TNS ;
 +----------------------------------------+-------+---------------+
-; pixel_clk                              ; 0.418 ; 0.000         ;
-; vga_controller:VGA_Controller|disp_ena ; 0.455 ; 0.000         ;
+; pixel_clk                              ; 0.397 ; 0.000         ;
+; vga_controller:VGA_Controller|disp_ena ; 3.153 ; 0.000         ;
 +----------------------------------------+-------+---------------+
 
 
@@ -175,8 +174,8 @@ No paths to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; pixel_clk                              ; -0.394 ; -15.202       ;
-; vga_controller:VGA_Controller|disp_ena ; 0.142  ; 0.000         ;
+; pixel_clk                              ; -0.394 ; -25.152       ;
+; vga_controller:VGA_Controller|disp_ena ; 0.213  ; 0.000         ;
 +----------------------------------------+--------+---------------+
 
 
@@ -186,14 +185,13 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                            ;
-+------------+-----------------+----------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                             ; Note ;
-+------------+-----------------+----------------------------------------+------+
-; 223.56 MHz ; 223.56 MHz      ; vga_controller:VGA_Controller|disp_ena ;      ;
-; 261.37 MHz ; 261.37 MHz      ; pixel_clk                              ;      ;
-+------------+-----------------+----------------------------------------+------+
++--------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 254.58 MHz ; 254.58 MHz      ; pixel_clk  ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -202,8 +200,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; vga_controller:VGA_Controller|disp_ena ; -3.473 ; -95.303       ;
-; pixel_clk                              ; -2.826 ; -58.608       ;
+; vga_controller:VGA_Controller|disp_ena ; -6.006 ; -118.840      ;
+; pixel_clk                              ; -2.928 ; -110.199      ;
 +----------------------------------------+--------+---------------+
 
 
@@ -212,8 +210,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------+-------+---------------+
 ; Clock                                  ; Slack ; End Point TNS ;
 +----------------------------------------+-------+---------------+
-; pixel_clk                              ; 0.417 ; 0.000         ;
-; vga_controller:VGA_Controller|disp_ena ; 0.420 ; 0.000         ;
+; pixel_clk                              ; 0.397 ; 0.000         ;
+; vga_controller:VGA_Controller|disp_ena ; 3.281 ; 0.000         ;
 +----------------------------------------+-------+---------------+
 
 
@@ -234,8 +232,8 @@ No paths to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; pixel_clk                              ; -0.394 ; -16.647       ;
-; vga_controller:VGA_Controller|disp_ena ; 0.154  ; 0.000         ;
+; pixel_clk                              ; -0.394 ; -27.484       ;
+; vga_controller:VGA_Controller|disp_ena ; 0.231  ; 0.000         ;
 +----------------------------------------+--------+---------------+
 
 
@@ -250,8 +248,8 @@ No synchronizer chains to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; vga_controller:VGA_Controller|disp_ena ; -1.731 ; -32.587       ;
-; pixel_clk                              ; -1.195 ; -20.669       ;
+; vga_controller:VGA_Controller|disp_ena ; -3.036 ; -58.908       ;
+; pixel_clk                              ; -1.166 ; -36.925       ;
 +----------------------------------------+--------+---------------+
 
 
@@ -260,8 +258,8 @@ No synchronizer chains to report.
 +----------------------------------------+-------+---------------+
 ; Clock                                  ; Slack ; End Point TNS ;
 +----------------------------------------+-------+---------------+
-; vga_controller:VGA_Controller|disp_ena ; 0.136 ; 0.000         ;
-; pixel_clk                              ; 0.229 ; 0.000         ;
+; pixel_clk                              ; 0.216 ; 0.000         ;
+; vga_controller:VGA_Controller|disp_ena ; 1.803 ; 0.000         ;
 +----------------------------------------+-------+---------------+
 
 
@@ -282,8 +280,8 @@ No paths to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; pixel_clk                              ; -0.085 ; -2.424        ;
-; vga_controller:VGA_Controller|disp_ena ; 0.174  ; 0.000         ;
+; pixel_clk                              ; -0.089 ; -4.087        ;
+; vga_controller:VGA_Controller|disp_ena ; 0.263  ; 0.000         ;
 +----------------------------------------+--------+---------------+
 
 
@@ -298,8 +296,8 @@ No synchronizer chains to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; vga_controller:VGA_Controller|disp_ena ; -1.442 ; -25.556       ;
-; pixel_clk                              ; -1.047 ; -17.221       ;
+; vga_controller:VGA_Controller|disp_ena ; -2.915 ; -56.673       ;
+; pixel_clk                              ; -1.021 ; -31.941       ;
 +----------------------------------------+--------+---------------+
 
 
@@ -308,8 +306,8 @@ No synchronizer chains to report.
 +----------------------------------------+-------+---------------+
 ; Clock                                  ; Slack ; End Point TNS ;
 +----------------------------------------+-------+---------------+
-; vga_controller:VGA_Controller|disp_ena ; 0.196 ; 0.000         ;
-; pixel_clk                              ; 0.208 ; 0.000         ;
+; pixel_clk                              ; 0.201 ; 0.000         ;
+; vga_controller:VGA_Controller|disp_ena ; 1.840 ; 0.000         ;
 +----------------------------------------+-------+---------------+
 
 
@@ -330,8 +328,8 @@ No paths to report.
 +----------------------------------------+--------+---------------+
 ; Clock                                  ; Slack  ; End Point TNS ;
 +----------------------------------------+--------+---------------+
-; pixel_clk                              ; -0.087 ; -2.486        ;
-; vga_controller:VGA_Controller|disp_ena ; 0.226  ; 0.000         ;
+; pixel_clk                              ; -0.088 ; -4.129        ;
+; vga_controller:VGA_Controller|disp_ena ; 0.307  ; 0.000         ;
 +----------------------------------------+--------+---------------+
 
 
@@ -346,12 +344,12 @@ No synchronizer chains to report.
 +-----------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                   ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-----------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                        ; -3.546   ; 0.136 ; N/A      ; N/A     ; -0.394              ;
-;  pixel_clk                              ; -2.826   ; 0.208 ; N/A      ; N/A     ; -0.394              ;
-;  vga_controller:VGA_Controller|disp_ena ; -3.546   ; 0.136 ; N/A      ; N/A     ; 0.142               ;
-; Design-wide TNS                         ; -155.744 ; 0.0   ; 0.0      ; 0.0     ; -16.647             ;
-;  pixel_clk                              ; -59.859  ; 0.000 ; N/A      ; N/A     ; -16.647             ;
-;  vga_controller:VGA_Controller|disp_ena ; -95.885  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+; Worst-case Slack                        ; -6.006   ; 0.201 ; N/A      ; N/A     ; -0.394              ;
+;  pixel_clk                              ; -2.928   ; 0.201 ; N/A      ; N/A     ; -0.394              ;
+;  vga_controller:VGA_Controller|disp_ena ; -6.006   ; 1.803 ; N/A      ; N/A     ; 0.213               ;
+; Design-wide TNS                         ; -229.039 ; 0.0   ; 0.0      ; 0.0     ; -27.484             ;
+;  pixel_clk                              ; -111.072 ; 0.000 ; N/A      ; N/A     ; -27.484             ;
+;  vga_controller:VGA_Controller|disp_ena ; -118.840 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 +-----------------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -540,25 +538,25 @@ No synchronizer chains to report.
 +----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                                             ;
-+----------------------------------------+----------------------------------------+----------+----------+----------+----------+
-; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+----------------------------------------+----------------------------------------+----------+----------+----------+----------+
-; pixel_clk                              ; pixel_clk                              ; 1390     ; 0        ; 0        ; 0        ;
-; vga_controller:VGA_Controller|disp_ena ; vga_controller:VGA_Controller|disp_ena ; 0        ; 0        ; 0        ; 132      ;
-+----------------------------------------+----------------------------------------+----------+----------+----------+----------+
++-------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                 ;
++------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------------------------------------+----------+----------+----------+----------+
+; pixel_clk  ; pixel_clk                              ; 5458     ; 0        ; 0        ; 0        ;
+; pixel_clk  ; vga_controller:VGA_Controller|disp_ena ; 0        ; 0        ; 88       ; 0        ;
++------------+----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                                              ;
-+----------------------------------------+----------------------------------------+----------+----------+----------+----------+
-; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+----------------------------------------+----------------------------------------+----------+----------+----------+----------+
-; pixel_clk                              ; pixel_clk                              ; 1390     ; 0        ; 0        ; 0        ;
-; vga_controller:VGA_Controller|disp_ena ; vga_controller:VGA_Controller|disp_ena ; 0        ; 0        ; 0        ; 132      ;
-+----------------------------------------+----------------------------------------+----------+----------+----------+----------+
++-------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                  ;
++------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------------------------------------+----------+----------+----------+----------+
+; pixel_clk  ; pixel_clk                              ; 5458     ; 0        ; 0        ; 0        ;
+; pixel_clk  ; vga_controller:VGA_Controller|disp_ena ; 0        ; 0        ; 88       ; 0        ;
++------------+----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -582,7 +580,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 30    ; 30   ;
+; Unconstrained Input Port Paths  ; 49    ; 49   ;
 ; Unconstrained Output Ports      ; 27    ; 27   ;
 ; Unconstrained Output Port Paths ; 27    ; 27   ;
 +---------------------------------+-------+------+
@@ -694,115 +692,115 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Jun 15 18:34:11 2017
+    Info: Processing started: Thu Jun 15 18:48:31 2017
 Info: Command: quartus_sta VGA_Controller -c VGA_Controller
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 48 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 24 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'VGA_Controller.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name vga_controller:VGA_Controller|disp_ena vga_controller:VGA_Controller|disp_ena
     Info (332105): create_clock -period 1.000 -name pixel_clk pixel_clk
+    Info (332105): create_clock -period 1.000 -name vga_controller:VGA_Controller|disp_ena vga_controller:VGA_Controller|disp_ena
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.546
+Info (332146): Worst-case setup slack is -5.914
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.546             -95.885 vga_controller:VGA_Controller|disp_ena 
-    Info (332119):    -2.811             -59.859 pixel_clk 
-Info (332146): Worst-case hold slack is 0.418
+    Info (332119):    -5.914            -116.860 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -2.925            -111.072 pixel_clk 
+Info (332146): Worst-case hold slack is 0.397
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.418               0.000 pixel_clk 
-    Info (332119):     0.455               0.000 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):     0.397               0.000 pixel_clk 
+    Info (332119):     3.153               0.000 vga_controller:VGA_Controller|disp_ena 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -15.202 pixel_clk 
-    Info (332119):     0.142               0.000 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -0.394             -25.152 pixel_clk 
+    Info (332119):     0.213               0.000 vga_controller:VGA_Controller|disp_ena 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.473
+Info (332146): Worst-case setup slack is -6.006
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.473             -95.303 vga_controller:VGA_Controller|disp_ena 
-    Info (332119):    -2.826             -58.608 pixel_clk 
-Info (332146): Worst-case hold slack is 0.417
+    Info (332119):    -6.006            -118.840 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -2.928            -110.199 pixel_clk 
+Info (332146): Worst-case hold slack is 0.397
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.417               0.000 pixel_clk 
-    Info (332119):     0.420               0.000 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):     0.397               0.000 pixel_clk 
+    Info (332119):     3.281               0.000 vga_controller:VGA_Controller|disp_ena 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -16.647 pixel_clk 
-    Info (332119):     0.154               0.000 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -0.394             -27.484 pixel_clk 
+    Info (332119):     0.231               0.000 vga_controller:VGA_Controller|disp_ena 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.731
+Info (332146): Worst-case setup slack is -3.036
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.731             -32.587 vga_controller:VGA_Controller|disp_ena 
-    Info (332119):    -1.195             -20.669 pixel_clk 
-Info (332146): Worst-case hold slack is 0.136
+    Info (332119):    -3.036             -58.908 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -1.166             -36.925 pixel_clk 
+Info (332146): Worst-case hold slack is 0.216
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.136               0.000 vga_controller:VGA_Controller|disp_ena 
-    Info (332119):     0.229               0.000 pixel_clk 
+    Info (332119):     0.216               0.000 pixel_clk 
+    Info (332119):     1.803               0.000 vga_controller:VGA_Controller|disp_ena 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.085
+Info (332146): Worst-case minimum pulse width slack is -0.089
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.085              -2.424 pixel_clk 
-    Info (332119):     0.174               0.000 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -0.089              -4.087 pixel_clk 
+    Info (332119):     0.263               0.000 vga_controller:VGA_Controller|disp_ena 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.442
+Info (332146): Worst-case setup slack is -2.915
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.442             -25.556 vga_controller:VGA_Controller|disp_ena 
-    Info (332119):    -1.047             -17.221 pixel_clk 
-Info (332146): Worst-case hold slack is 0.196
+    Info (332119):    -2.915             -56.673 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -1.021             -31.941 pixel_clk 
+Info (332146): Worst-case hold slack is 0.201
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.196               0.000 vga_controller:VGA_Controller|disp_ena 
-    Info (332119):     0.208               0.000 pixel_clk 
+    Info (332119):     0.201               0.000 pixel_clk 
+    Info (332119):     1.840               0.000 vga_controller:VGA_Controller|disp_ena 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.087
+Info (332146): Worst-case minimum pulse width slack is -0.088
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.087              -2.486 pixel_clk 
-    Info (332119):     0.226               0.000 vga_controller:VGA_Controller|disp_ena 
+    Info (332119):    -0.088              -4.129 pixel_clk 
+    Info (332119):     0.307               0.000 vga_controller:VGA_Controller|disp_ena 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 997 megabytes
-    Info: Processing ended: Thu Jun 15 18:34:20 2017
+    Info: Peak virtual memory: 995 megabytes
+    Info: Processing ended: Thu Jun 15 18:48:40 2017
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:09
 
 
