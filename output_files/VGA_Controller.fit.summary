@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Jun 15 18:00:53 2017
+Fitter Status : Successful - Thu Jun 15 18:33:59 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : VGA_Controller
 Top-level Entity Name : VGA
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 45 / 32,070 ( < 1 % )
-Total registers : 43
+Logic utilization (in ALMs) : 69 / 32,070 ( < 1 % )
+Total registers : 29
 Total pins : 29 / 457 ( 6 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

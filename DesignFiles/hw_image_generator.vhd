@@ -20,13 +20,16 @@
 --    
 --------------------------------------------------------------------------------
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
 
 ENTITY hw_image_generator IS
-  GENERIC(
-    pixels_y :  INTEGER := 478;   --row that first color will persist until
-    pixels_x :  INTEGER := 600);  --column that first color will persist until
+  --GENERIC(
+    --pixels_y :  INTEGER := 478;   --row that first color will persist until
+    --pixels_x :  INTEGER := 600);  --column that first color will persist until
   PORT(
     disp_ena :  IN   STD_LOGIC;  --display enable ('1' = display time, '0' = blanking time)
     row      :  IN   INTEGER;    --row pixel coordinate
@@ -37,26 +40,28 @@ ENTITY hw_image_generator IS
 END hw_image_generator;
 
 ARCHITECTURE behavior OF hw_image_generator IS
-
+    SIGNAL old_red      :  STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');  --old red magnitude
+    SIGNAL old_green    :  STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');  --old green magnitude
+    SIGNAL old_blue     :  STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0'); --old blue magnitude
 
 BEGIN
   PROCESS(disp_ena, row, column)
   BEGIN
-
     IF(disp_ena = '1') THEN        --display time
-      IF(row < pixels_y AND column < pixels_x) THEN
-        red <= (OTHERS => '0');
-        green  <= (OTHERS => '0');
-        blue <= (OTHERS => '1');
-      ELSE
-        red <= (OTHERS => '1');
-        green  <= (OTHERS => '1');
-        blue <= (OTHERS => '0');
+		old_red<=red;
+		old_green<=green;
+		old_blue<=blue;
+		
+		red <= old_red+1;
+		
+      IF (old_red = "11111111") THEN
+        green <= old_green+1;
       END IF;
-    ELSE                           --blanking time
-      red <= (OTHERS => '0');
-      green <= (OTHERS => '0');
-      blue <= (OTHERS => '0');
+		
+		IF (old_green = "11111111") THEN
+        blue <= old_blue+1;
+      END IF;
+
     END IF;
   
   END PROCESS;

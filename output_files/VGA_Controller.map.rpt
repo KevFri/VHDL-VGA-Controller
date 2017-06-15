@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA_Controller
-Thu Jun 15 18:00:07 2017
+Thu Jun 15 18:33:08 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -13,15 +13,14 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. User-Specified and Inferred Latches
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
  11. Parameter Settings for User Entity Instance: vga_controller:VGA_Controller
- 12. Parameter Settings for User Entity Instance: hw_image_generator:ImageGenerator
- 13. Port Connectivity Checks: "vga_controller:VGA_Controller"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 12. Port Connectivity Checks: "vga_controller:VGA_Controller"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -48,13 +47,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 15 18:00:07 2017       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun 15 18:33:08 2017       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; VGA_Controller                              ;
 ; Top-level Entity Name           ; VGA                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 43                                          ;
+; Total registers                 ; 24                                          ;
 ; Total pins                      ; 29                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -169,7 +168,8 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -184,31 +184,31 @@ agreement for further details.
 +------------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                             ;
-+---------------------------------------------+-------------------------------------------+
-; Resource                                    ; Usage                                     ;
-+---------------------------------------------+-------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 45                                        ;
-;                                             ;                                           ;
-; Combinational ALUT usage for logic          ; 65                                        ;
-;     -- 7 input functions                    ; 0                                         ;
-;     -- 6 input functions                    ; 14                                        ;
-;     -- 5 input functions                    ; 18                                        ;
-;     -- 4 input functions                    ; 8                                         ;
-;     -- <=3 input functions                  ; 25                                        ;
-;                                             ;                                           ;
-; Dedicated logic registers                   ; 43                                        ;
-;                                             ;                                           ;
-; I/O pins                                    ; 29                                        ;
-;                                             ;                                           ;
-; Total DSP Blocks                            ; 0                                         ;
-;                                             ;                                           ;
-; Maximum fan-out node                        ; vga_controller:VGA_Controller|LessThan0~2 ;
-; Maximum fan-out                             ; 48                                        ;
-; Total fan-out                               ; 534                                       ;
-; Average fan-out                             ; 3.22                                      ;
-+---------------------------------------------+-------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                          ;
++---------------------------------------------+----------------------------------------+
+; Resource                                    ; Usage                                  ;
++---------------------------------------------+----------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 68                                     ;
+;                                             ;                                        ;
+; Combinational ALUT usage for logic          ; 124                                    ;
+;     -- 7 input functions                    ; 0                                      ;
+;     -- 6 input functions                    ; 11                                     ;
+;     -- 5 input functions                    ; 13                                     ;
+;     -- 4 input functions                    ; 7                                      ;
+;     -- <=3 input functions                  ; 93                                     ;
+;                                             ;                                        ;
+; Dedicated logic registers                   ; 24                                     ;
+;                                             ;                                        ;
+; I/O pins                                    ; 29                                     ;
+;                                             ;                                        ;
+; Total DSP Blocks                            ; 0                                      ;
+;                                             ;                                        ;
+; Maximum fan-out node                        ; vga_controller:VGA_Controller|disp_ena ;
+; Maximum fan-out                             ; 34                                     ;
+; Total fan-out                               ; 551                                    ;
+; Average fan-out                             ; 2.67                                   ;
++---------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,24 +216,69 @@ agreement for further details.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name        ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+--------------------+--------------+
-; |VGA                                   ; 65 (0)              ; 43 (0)                    ; 0                 ; 0          ; 29   ; 0            ; |VGA                                   ; VGA                ; work         ;
-;    |hw_image_generator:ImageGenerator| ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA|hw_image_generator:ImageGenerator ; hw_image_generator ; work         ;
-;    |vga_controller:VGA_Controller|     ; 59 (59)             ; 43 (43)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA|vga_controller:VGA_Controller     ; vga_controller     ; work         ;
+; |VGA                                   ; 124 (0)             ; 24 (0)                    ; 0                 ; 0          ; 29   ; 0            ; |VGA                                   ; VGA                ; work         ;
+;    |hw_image_generator:ImageGenerator| ; 73 (73)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA|hw_image_generator:ImageGenerator ; hw_image_generator ; work         ;
+;    |vga_controller:VGA_Controller|     ; 51 (51)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA|vga_controller:VGA_Controller     ; vga_controller     ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+----------------------------------------------+----------------------------------------+
-; Register name                                ; Reason for Removal                     ;
-+----------------------------------------------+----------------------------------------+
-; vga_controller:VGA_Controller|column[11..30] ; Stuck at GND due to stuck port data_in ;
-; vga_controller:VGA_Controller|row[10..30]    ; Stuck at GND due to stuck port data_in ;
-; vga_controller:VGA_Controller|row[0]         ; Lost fanout                            ;
-; vga_controller:VGA_Controller|column[0..2]   ; Lost fanout                            ;
-; Total Number of Removed Registers = 45       ;                                        ;
-+----------------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                       ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                        ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; hw_image_generator:ImageGenerator|red[0]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|red[1]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|red[2]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|red[3]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|red[4]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|red[5]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|red[6]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|red[7]            ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|green[0]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|green[1]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|green[2]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|green[3]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|green[4]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|green[5]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|green[6]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|green[7]          ; hw_image_generator:ImageGenerator|green[7] ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[0]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[1]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[2]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[3]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[4]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[5]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[6]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|blue[7]           ; hw_image_generator:ImageGenerator|blue[7]  ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[0]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[0]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[1]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[2]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[3]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[4]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[5]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[6]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_red[7]        ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[0]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[1]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[2]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[3]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[4]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[5]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[6]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_green[7]      ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[1]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[2]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[3]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[4]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[5]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[6]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; hw_image_generator:ImageGenerator|old_blue[7]       ; vga_controller:VGA_Controller|disp_ena     ; yes                    ;
+; Number of user-specified and inferred latches = 48  ;                                            ;                        ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -241,12 +286,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 43    ;
-; Number of registers using Synchronous Clear  ; 38    ;
-; Number of registers using Synchronous Load   ; 19    ;
-; Number of registers using Asynchronous Clear ; 43    ;
+; Total registers                              ; 24    ;
+; Number of registers using Synchronous Clear  ; 21    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 24    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 17    ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -279,17 +324,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: hw_image_generator:ImageGenerator ;
-+----------------+-------+-------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                  ;
-+----------------+-------+-------------------------------------------------------+
-; pixels_y       ; 478   ; Signed Integer                                        ;
-; pixels_x       ; 600   ; Signed Integer                                        ;
-+----------------+-------+-------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "vga_controller:VGA_Controller"                                                         ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -305,26 +339,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 43                          ;
-;     CLR               ; 5                           ;
+; arriav_ff             ; 24                          ;
+;     CLR               ; 3                           ;
 ;     CLR SCLR          ; 11                          ;
-;     CLR SCLR SLD      ; 10                          ;
-;     ENA CLR SCLR      ; 8                           ;
-;     ENA CLR SCLR SLD  ; 9                           ;
-; arriav_lcell_comb     ; 66                          ;
-;     arith             ; 21                          ;
-;         1 data inputs ; 21                          ;
-;     normal            ; 45                          ;
-;         1 data inputs ; 1                           ;
+;     ENA CLR SCLR      ; 10                          ;
+; arriav_lcell_comb     ; 124                         ;
+;     arith             ; 42                          ;
+;         1 data inputs ; 39                          ;
+;         2 data inputs ; 3                           ;
+;     normal            ; 82                          ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 18                          ;
-;         6 data inputs ; 14                          ;
+;         3 data inputs ; 49                          ;
+;         4 data inputs ; 7                           ;
+;         5 data inputs ; 13                          ;
+;         6 data inputs ; 11                          ;
 ; boundary_port         ; 29                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 3.75                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -343,7 +375,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Jun 15 17:59:52 2017
+    Info: Processing started: Thu Jun 15 18:32:54 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_Controller -c VGA_Controller
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -351,29 +383,84 @@ Info (12021): Found 2 design units, including 1 entities, in source file designf
     Info (12022): Found design unit 1: vga_controller-behavior File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/vga_controller.vhd Line: 50
     Info (12023): Found entity 1: vga_controller File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/vga_controller.vhd Line: 26
 Info (12021): Found 2 design units, including 1 entities, in source file designfiles/hw_image_generator.vhd
-    Info (12022): Found design unit 1: hw_image_generator-behavior File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 39
-    Info (12023): Found entity 1: hw_image_generator File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 26
+    Info (12022): Found design unit 1: hw_image_generator-behavior File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 42
+    Info (12023): Found entity 1: hw_image_generator File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 29
 Info (12021): Found 2 design units, including 1 entities, in source file designfiles/vga.vhd
     Info (12022): Found design unit 1: VGA-behavior File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/VGA.vhd Line: 17
     Info (12023): Found entity 1: VGA File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/VGA.vhd Line: 4
 Info (12127): Elaborating entity "VGA" for the top level hierarchy
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:VGA_Controller" File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/VGA.vhd Line: 24
 Info (12128): Elaborating entity "hw_image_generator" for hierarchy "hw_image_generator:ImageGenerator" File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/VGA.vhd Line: 26
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(55): signal "old_red" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 55
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(57): signal "old_red" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(58): signal "old_green" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(61): signal "old_green" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(62): signal "old_blue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 62
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(48): inferring latch(es) for signal or variable "old_red", which holds its previous value in one or more paths through the process File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(48): inferring latch(es) for signal or variable "old_green", which holds its previous value in one or more paths through the process File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(48): inferring latch(es) for signal or variable "old_blue", which holds its previous value in one or more paths through the process File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(48): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(48): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(48): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[0]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[1]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[2]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[3]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[4]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[5]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[6]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "blue[7]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[0]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[1]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[2]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[3]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[4]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[5]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[6]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "green[7]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[0]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[1]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[2]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[3]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[4]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[5]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[6]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "red[7]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[0]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[1]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[2]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[3]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[4]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[5]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[6]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_blue[7]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[0]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[1]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[2]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[3]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[4]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[5]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[6]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_green[7]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[0]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[1]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[2]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[3]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[4]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[5]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[6]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
+Info (10041): Inferred latch for "old_red[7]" at hw_image_generator.vhd(48) File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/hw_image_generator.vhd Line: 48
 Info (286030): Timing-Driven Synthesis is running
-Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register vga_controller:VGA_Controller|row[31] will power up to Low File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/vga_controller.vhd Line: 63
-    Critical Warning (18010): Register vga_controller:VGA_Controller|column[31] will power up to Low File: C:/Users/Kevin/Dropbox/Studium/ET6/Schaltkreisentwurf/VGA_Controller/DesignFiles/vga_controller.vhd Line: 63
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 132 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 174 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 27 output pins
-    Info (21061): Implemented 103 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info (21061): Implemented 145 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 722 megabytes
-    Info: Processing ended: Thu Jun 15 18:00:07 2017
-    Info: Elapsed time: 00:00:15
+    Info: Processing ended: Thu Jun 15 18:33:08 2017
+    Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:32
 
 
