@@ -37,6 +37,8 @@ ENTITY hw_image_generator IS
 END hw_image_generator;
 
 ARCHITECTURE behavior OF hw_image_generator IS
+
+
 BEGIN
   PROCESS(disp_ena, row, column)
   BEGIN
